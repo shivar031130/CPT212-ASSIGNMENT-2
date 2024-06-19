@@ -1,0 +1,22 @@
+# Pattern lengths
+m_values = np.linspace(1, 100, 100)
+
+# Alphabet size
+sigma = 256
+
+# Space complexities
+bm_space_complexity = m_values + sigma
+kmp_space_complexity = m_values
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(m_values, bm_space_complexity, label='Boyer-Moore Space Complexity O(m + |Σ|)', color='orange')
+plt.plot(m_values, kmp_space_complexity, label='KMP Space Complexity O(m)', color='purple')
+
+plt.xlabel('Length of Pattern (m)')
+plt.ylabel('Space Complexity')
+plt.title('Space Complexity Comparison: Boyer-Moore vs KMP')
+plt.legend()
+plt.grid(True)
+plt.show()
+
