@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Length of text
+n = np.linspace(10, 1000, 500)
+# Length of pattern
+m = 20
+
+# Boyer-Moore best case O(n/m)
+bm_best_case = n / m
+
+# Boyer-Moore worst case O(n*m)
+bm_worst_case = n * m
+
+# KMP case O(n)
+kmp_case = n
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(n, bm_best_case, label='Boyer-Moore Best Case O(n/m)', color='green')
+plt.plot(n, bm_worst_case, label='Boyer-Moore Worst Case O(n*m)', color='red')
+plt.plot(n, kmp_case, label='KMP Case O(n)', color='blue')
+
+plt.xlabel('Length of Text (n)')
+plt.ylabel('Time Complexity')
+plt.title('Time Complexity Comparison: Boyer-Moore vs KMP')
+plt.legend()
+plt.yscale('log')  # Using log scale for better visualization
+plt.grid(True)
+plt.show()
